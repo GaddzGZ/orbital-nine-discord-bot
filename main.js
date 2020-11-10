@@ -11,7 +11,7 @@ client.on('guildMemberAdd', member => {
 	
 	const channel = member.guild.channels.cache.find(channel => channel.name === "general");
 	if (!channel) return;
-	setTimeout(welcomeMessage, 9000)
+	setTimeout(welcomeMessage, 500)
 	function welcomeMessage(){
 		channel.send(`Welcome to our server, ${member}, please read the ${member.guild.channels.cache.get(rulesChannelId).toString()} in rules channel!`);
 	}
