@@ -8,7 +8,7 @@ client.once('ready', () => {
 });               // WELCOME MESSAGE START
 
 client.on('guildMemberAdd', member => {
-	const messageWelcome = `Welcome tdfso oour server, ${member}, please read the ${member.guild.channels.cache.get(rulesChannelId).toString()} in rules channel!`
+	const messageWelcome = `Welcome the server, ${member}, please read the ${member.guild.channels.cache.get(rulesChannelId).toString()} in rules channel!`
 
 
 	const channel = member.guild.channels.cache.find(channel => channel.name === "general");
