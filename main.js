@@ -124,7 +124,7 @@ function counting () {                                                   //funct
     }
 
 
-    const winnerChannel = client.channels.cache.find(channel => channel.id === welcomeChannelID);                   //Gets the channel to send the winning message in.
+    const winnerChannel = client.channels.cache.find(channel => channel.id === votingChannelId);                   //Gets the channel to send the winning message in.
     winnerChannel.send({files: ['./sow.png']});                                                                     //Sends an image as a part of the winning message
     setTimeout(sendText, 3000)                                                                                      //Waits 5 sec to let the image load, then sends the winning text and mentions in the function under.
     function sendText() {
