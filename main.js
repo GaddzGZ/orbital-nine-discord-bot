@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_MESSAGE_REACTIONS", ""] });
 const rulesChannelId = '774414949916868628';                                                                                //ID to the #rules channel
-let welcomeChannelID = "648942438861504545";                                                                                //ID of channel where the welcome message is sent
+let welcomeChannelID = "672927574904668187";                                                                                //ID of channel where the welcome message is sent
 
 client.once('ready', () => {                                                                                                //Sends a message to the console when bot goes online
 	console.log('Bot is online')
