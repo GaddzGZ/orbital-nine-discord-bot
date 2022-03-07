@@ -1,7 +1,6 @@
 
 const Discord = require('discord.js');
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_MESSAGE_REACTIONS", ""] });
-client.login('Nzc1NjcwNzAyMjA4MzE5NTEw.X6ptog.dzYLoWZ9xq5ZyL1YldTjnus7m6s');
 const rulesChannelId = '774414949916868628';                                                                                //ID to the #rules channel
 let welcomeChannelID = "648942438861504545";                                                                                //ID of channel where the welcome message is sent
 
