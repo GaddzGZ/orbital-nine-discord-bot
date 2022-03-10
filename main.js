@@ -140,5 +140,5 @@ function counting () {                                                   //funct
     count = {};
     winner = [];
 }
-
+// :)
 client.login(process.env.BOT_TOKEN)
