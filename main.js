@@ -83,12 +83,12 @@ let dublicate = false;
 setInterval(dateCheck, 600000);                                            //Checks date every 10th minute.
 
 function dateCheck () {
-    let today = new Date(day)
-    if (today.getDay() == 5 && dublicate == false) {
+    let today = new Date()
+    if (today.getDay() == 6 && dublicate == false) {
         counting();
         dublicate = true;
     }
-    if(today.getDay() == 6) {
+    if(today.getDay() == 7) {
         dublicate = false;
     }
 }
