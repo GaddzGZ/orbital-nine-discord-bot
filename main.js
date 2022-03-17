@@ -34,7 +34,7 @@ let messageIdList = [];
 let count = {};
 let winner = [];
 let videoLink = "";
-let userNickname = "";
+let authorId;
 
 let votingChannelId = "422297340356067329";                          //The ID of the channel that the voting counts in.
 
@@ -53,7 +53,7 @@ client.on('messageReactionAdd', (message, user) => {                       //Cod
 
             if (messageType == "video" || messageType == "image") {                                                                       //Checks if attachment is video.
                 videoLink = message.message.attachments.first().url;
-                userNickname = message.message.author.username; 
+                authorId = message.message.author.id; 
                 for (let i = 0; i < messageNumber; i++) {                                                        //Loop that checks through the results to see if the user have reacted to the same message earlier
                     if (results["Message" + i][0] == userId && results["Message" + i][1] == messageId) {
                         similarUser = true;
@@ -64,7 +64,7 @@ client.on('messageReactionAdd', (message, user) => {                       //Cod
                     results["Message" + messageNumber].push(userId);                        //Adds the user id that posted the video as first element in array
                     results["Message" + messageNumber].push(messageId);                     //Adds the id of the message as the second element in the array.
                     results["Message" + messageNumber].push(videoLink);                     //Adds the link to the attachment as the third element in the array.
-                    results["Message" + messageNumber].push(userNickname);                  //Adds the username of the poster as forth element in the array
+                    results["Message" + messageNumber].push(authorId);                  //Adds the username of the poster as forth element in the array
                     messageIdList.push(results["Message" + messageNumber][1])
                     messageNumber++
             }
@@ -84,11 +84,11 @@ setInterval(dateCheck, 600000);                                            //Che
 
 function dateCheck () {
     let today = new Date()
-    if (today.getDay() == 6 && dublicate == false) {
+    if (today.getDay() == 5 && dublicate == false) {
         counting();
         dublicate = true;
     }
-    if(today.getDay() == 7) {
+    if(today.getDay() == 6) {
         dublicate = false;
     }
 }
@@ -117,7 +117,7 @@ function counting () {                                                   //funct
     } 
     for (k in results) {                                                //Loop that finds the information saved about the winning video
         if (results[k][1] == winner[0]) {
-            userNickname = results[k][3];
+            authorId = results[k][3];
             videoLink = results[k][2];
             userId = results[k][0];
         }
@@ -129,7 +129,7 @@ function counting () {                                                   //funct
     setTimeout(sendText, 3000)                                                                                      //Waits 5 sec to let the image load, then sends the winning text and mentions in the function under.
     function sendText() {
         winnerChannel.send("**Every week at Saturday, midnight (UTC+0), the video/image post in the #levels channel with the most reactions is chosen as the \"Solution of the week\".**\ \nThe member that gets the solution of the week will get the role \"Solution of the Week\" until a new winner is chosen next week.\n PS: This is just a test message to see if everything works as it should. I (Gaddz) will tell you when this bot is up and running as it should")
-        winnerChannel.send("**This week's best solution is by <@" + userId + ">, with " + numberOfVotes + " votes. Congratulations:partying_face: . Enjoy your own status for the next week!**\ \nYou can see the video attached to this post: " + videoLink)
+        winnerChannel.send("**This week's best solution is by <@" + authorId + ">, with " + numberOfVotes + " votes. Congratulations:partying_face: . Enjoy your own status for the next week!**\ \nYou can see the video attached to this post: " + videoLink)
     }
     
 
