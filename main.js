@@ -98,6 +98,7 @@ function counting () {                                                   //funct
         count[x] = (count[x] || 0) + 1;
     });
     console.log(count);
+	
     
     let numberOfVotes;
     let k = 0;                                                            //In previous three lines or something, every message with attachment that have been reacted to have been added to count object. From here and down, the votes are counted
