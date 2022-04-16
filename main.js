@@ -84,11 +84,11 @@ setInterval(dateCheck, 600000);                                            //Che
 
 function dateCheck () {
     let today = new Date()
-    if (today.getDay() == 0 && dublicate == false) {
+    if (today.getDay() == 5 && dublicate == false) {
         counting();
         dublicate = true;
     }
-    if(today.getDay() == 1) {
+    if(today.getDay() == 6) {
         dublicate = false;
     }
 }
