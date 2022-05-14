@@ -20,7 +20,7 @@ client.on('guildMemberAdd', (member) => {                                       
     function welcomeMessage() {                                                             //Creates a function that sends the message (to make the wait-command work)
         member.guild.channels.cache.get(welcomeChannelID).send(messageWelcome);             //Sends the welcome message to the right channel
     }                                                                                                                            
-                                                                                            
+                                                                                             
 })
 
 
