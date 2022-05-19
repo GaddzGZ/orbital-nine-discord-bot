@@ -93,6 +93,9 @@ function dateCheck () {
     }
 }
 */
+
+setInterval(counting, 86400000)
+
 function counting () {                                                   //function that counts reactions, and figures out who the winner/winners is/are.
     messageIdList.forEach((x) => {
         count[x] = (count[x] || 0) + 1;
