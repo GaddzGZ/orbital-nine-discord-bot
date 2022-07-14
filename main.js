@@ -26,7 +26,7 @@ client.on('guildMemberAdd', (member) => {                                       
 
 
 //PS. I result objektet er userid først, så meldingsid
-
+/*
 //VOTING SYSTEM:
 let results = {};
 let messageNumber = 0;
@@ -78,7 +78,7 @@ client.on('messageReactionAdd', (message, user) => {                       //Cod
     
     
 })     
-/*
+
 let dublicate = false;
 setInterval(dateCheck, 600000);                                            //Checks date every 10th minute.
 
@@ -92,9 +92,8 @@ function dateCheck () {
         dublicate = false;
     }
 }
-*/
 
-setInterval(counting, 86400000)
+
 
 function counting () {                                                   //function that counts reactions, and figures out who the winner/winners is/are.
     messageIdList.forEach((x) => {
@@ -146,3 +145,4 @@ function counting () {                                                   //funct
 }
 // :)
 client.login(process.env.BOT_TOKEN) 
+*/
